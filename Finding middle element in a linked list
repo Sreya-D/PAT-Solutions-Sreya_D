@@ -1,0 +1,17 @@
+class node:
+    def __init__(data):
+        self.data = data
+        self.next = None
+
+class Solution:
+    def findMid(self, head):
+        if not head:
+            return -1
+            
+        a = b = head
+            
+        while b and b.next:
+            a = a.next
+            b = b.next.next
+            
+        return a.data
