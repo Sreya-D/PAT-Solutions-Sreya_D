@@ -1,0 +1,16 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Solution:
+    def count(self, head, key):
+        count = 0
+        n = head
+        
+        while n:
+            if n.data == key:
+                count += 1
+            n = n.next
+        
+        return count
