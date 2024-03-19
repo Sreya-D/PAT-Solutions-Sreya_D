@@ -1,0 +1,17 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if not s:
+            return 0
+        
+        seen = {} 
+        ml = 0
+        start = 0
+        
+        for a, b in enumerate(s):
+            if b in seen and seen[b] >= start:
+                start = seen[b] + 1
+                
+            seen[b] = a
+            ml = max(ml, a - start + 1)
+        
+        return ml
