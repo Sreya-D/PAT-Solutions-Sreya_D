@@ -1,0 +1,11 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        arr = []
+        for i in nums:
+            arr.append(i)
+        
+        x = Counter(arr)
+
+        for a,b in x.items():
+            if b == 1:
+                return a
